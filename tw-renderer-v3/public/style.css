@@ -1,0 +1,61 @@
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --slide-bg: #ffffff;
+  --editor-bg: #1e1e1e;
+  --output-bg: #1e1e1e;
+  --output-text: #0f0;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #eeeeee;
+  --slide-bg: #1e1e1e;
+  --output-bg: #000000;
+  --output-text: #00ff00;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#toggle-theme {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.slide {
+  background: var(--slide-bg);
+  color: var(--text);
+  width: 90vw;
+  height: 90vh;
+  margin: 5vh auto;
+  padding: 2rem;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.output {
+  background: var(--output-bg);
+  color: var(--output-text);
+  padding: 1rem;
+  font-family: monospace;
+  white-space: pre-wrap;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow: auto;
+}
