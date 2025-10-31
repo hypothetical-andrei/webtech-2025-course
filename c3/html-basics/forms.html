@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega Form Example</title>
+</head>
+<body>
+
+  <h1>HTML Mega Form</h1>
+
+  <form action="" method="">
+
+    <fieldset>
+      <legend>Basic Information</legend>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your full name"><br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com"><br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="0" max="120"><br><br>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob"><br><br>
+
+      <label for="color">Favorite Color:</label>
+      <input type="color" id="color" name="color"><br><br>
+
+      <label for="website">Website:</label>
+      <input type="url" id="website" name="website" placeholder="https://"><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferences</legend>
+
+      <p>Gender:</p>
+      <label><input type="radio" name="gender" value="female"> Female</label>
+      <label><input type="radio" name="gender" value="male"> Male</label>
+      <label><input type="radio" name="gender" value="other"> Other</label><br><br>
+
+      <p>Interests:</p>
+      <label><input type="checkbox" name="interests" value="music"> Music</label>
+      <label><input type="checkbox" name="interests" value="sports"> Sports</label>
+      <label><input type="checkbox" name="interests" value="reading"> Reading</label>
+      <label><input type="checkbox" name="interests" value="travel"> Travel</label><br><br>
+
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="">--Select--</option>
+        <option value="ro">Romania</option>
+        <option value="us">USA</option>
+        <option value="jp">Japan</option>
+        <option value="fr">France</option>
+      </select><br><br>
+
+      <label for="language">Favorite Programming Language:</label>
+      <input list="languages" id="language" name="language">
+      <datalist id="languages">
+        <option value="JavaScript">
+        <option value="Python">
+        <option value="C++">
+        <option value="Java">
+        <option value="Rust">
+      </datalist><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Advanced Inputs</legend>
+
+      <label for="file">Upload File:</label>
+      <input type="file" id="file" name="file"><br><br>
+
+      <label for="range">Satisfaction (0–10):</label>
+      <input type="range" id="range" name="satisfaction" min="0" max="10"><br><br>
+
+      <label for="time">Preferred Contact Time:</label>
+      <input type="time" id="time" name="contact_time"><br><br>
+
+      <label for="month">Favorite Month:</label>
+      <input type="month" id="month" name="fav_month"><br><br>
+
+      <label for="week">Preferred Week:</label>
+      <input type="week" id="week" name="fav_week"><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Other Elements</legend>
+
+      <label for="comments">Comments:</label><br>
+      <textarea id="comments" name="comments" rows="4" cols="40" placeholder="Write something..."></textarea><br><br>
+
+      <label for="progress">Progress:</label>
+      <progress id="progress" value="70" max="100">70%</progress><br><br>
+
+      <label for="meter">Skill Level:</label>
+      <meter id="meter" min="0" max="100" value="85">85%</meter><br><br>
+
+      <label for="search">Search:</label>
+      <input type="search" id="search" name="search" placeholder="Search something"><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Form Controls</legend>
+
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+      <input type="button" value="Custom Action" onclick="alert('Button clicked!')">
+    </fieldset>
+
+  </form>
+
+</body>
+</html>

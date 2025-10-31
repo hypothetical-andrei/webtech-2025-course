@@ -27,5 +27,5 @@ console.log('c is not being set to -1')
 o1.c = -1
 o1.print()
 
-o1.c = 3
+o1.c = 2
 o1.print()

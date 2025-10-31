@@ -11,9 +11,9 @@ Person.prototype.printMe = function() {
   console.log(`${this.name} is ${this.age} old`)
 }
 
+
 const p1 = new Person('jim', 22)
 const p2 = new Person('jane', 25)
-
 
 p1.printMe()
 
