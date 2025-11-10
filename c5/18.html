@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Layers Demo</title>
+  <style>
+    /* Declare layer order */
+    @layer base, theme;
+
+    /* THEME layer comes first in file but is declared last in order → overridden */
+    @layer theme {
+      .box {
+        background: lightgreen;
+        color: darkgreen;
+      }
+    }
+
+    /* BASE layer comes after but is declared earlier → lower precedence */
+    @layer base {
+      .box {
+        background: lightcoral;
+        color: white;
+        padding: 20px;
+        font-weight: bold;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    I am styled by layers
+  </div>
+</body>
+</html>
