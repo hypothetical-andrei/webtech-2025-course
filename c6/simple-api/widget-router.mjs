@@ -2,8 +2,19 @@ import express from 'express'
 
 const router = express.Router()
 
+router.use((req, res, next) => {
+	console.log('checking authentication')
+	next()
+})
+
 router.get('/widgets', (req, res) => {
-    res.status(200).json(res.app.locals.widgets)
+	const pageSize = parseInt(req.query.pageSize) || 2
+	let results = res.app.locals.widgets
+	if (req.query.pageNo) {
+		let pageNo = parseInt(req.query.pageNo)
+		results = results.slice(pageNo * pageSize, (pageNo + 1) * pageSize)
+	}
+	res.status(200).json(results)
 })
 
 router.post('/widgets', (req, res) => {
@@ -16,7 +27,7 @@ router.post('/widgets', (req, res) => {
 })
 
 router.get('/widgets/:id', (req, res) => {
-    const id = parseInt(req.params.id)
+	const id = parseInt(req.params.id)
 	const widget = res.app.locals.widgets.find(e => e.id === id)
 	if (widget) {
 		res.status(200).json(widget)
@@ -26,7 +37,7 @@ router.get('/widgets/:id', (req, res) => {
 })
 
 router.put('/widgets/:id', (req, res) => {
-    const id = parseInt(req.params.id)
+  const id = parseInt(req.params.id)
 	const widgetIndex = res.app.locals.widgets.findIndex(e => e.id === id)
 	if (widgetIndex !== -1) {
 		res.app.locals.widgets[widgetIndex].description = req.body.description

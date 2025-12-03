@@ -1,0 +1,26 @@
+services:
+  mysql_db:
+    image: mysql:8.0
+    container_name: mysql_instance
+    environment:
+      # Required environment variable for the root password
+      MYSQL_ROOT_PASSWORD: toor
+      # Optional: Creates a default database when the container starts
+      MYSQL_DATABASE: web_stuff2
+      # Optional: Creates a non-root user
+      MYSQL_USER: app1
+      MYSQL_PASSWORD: welcome123
+    ports:
+      # Maps host port 3306 to container port 3306 (default MySQL port)
+      - "3306:3306"
+    volumes:
+      # Persists data to a named volume on the host, so data isn't lost
+      # when the container is stopped or removed
+      - mysql_data:/var/lib/mysql
+      # Optional: Mount a custom configuration file if needed
+      # - ./my-custom.cnf:/etc/mysql/conf.d/my-custom.cnf
+    restart: always
+
+volumes:
+  mysql_data:
+    # Use a named volume for data persistence

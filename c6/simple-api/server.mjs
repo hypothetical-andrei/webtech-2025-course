@@ -10,8 +10,14 @@ app.locals.widgets = [{
 }, {
 	id: 2,
 	description: 'some other description'
+},  {
+	id: 3,
+	description: 'some other description'
+},  {
+	id: 4,
+	description: 'some other description'
 }]
-app.locals.currentId = 3
+app.locals.currentId = 5
 
 app.use('/api', router)
 
