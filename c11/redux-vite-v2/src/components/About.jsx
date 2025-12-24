@@ -3,7 +3,7 @@ import React from 'react'
 function About () {
   return (
     <div>
-      I am a simple react + redux + react-router + primereact app
+      This is a simple app with redux + react-router + primereact
     </div>
   )
 }

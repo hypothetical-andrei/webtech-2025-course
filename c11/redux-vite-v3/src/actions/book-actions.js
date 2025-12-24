@@ -16,7 +16,7 @@ export function getBooks(pageSize='', pageNo='', filterField='', filterValue='',
   }
 }
 
-export function addBook(book){
+export function addBook(book, pageSize='', pageNo='', filterField='', filterValue='', sortField='', sortOrder=''){
   return {
     type : ADD_BOOK,
     payload : async () => {
@@ -27,14 +27,14 @@ export function addBook(book){
             },
             body : JSON.stringify(book)
         })
-        let response  = await fetch(`${SERVER}/books`)
+        let response  = await await fetch(`${SERVER}/books?pageSize=${pageSize || ''}&pageNo=${pageNo || ''}&filterField=${filterField || ''}&filterValue=${filterValue || ''}&sortField=${sortField || ''}&sortOrder=${sortOrder || ''}`)
         let json = await response.json()
         return json
     }
   }
 }
 
-export function updateBook(bookId, book){
+export function updateBook(bookId, book, pageSize='', pageNo='', filterField='', filterValue='', sortField='', sortOrder=''){
   return {
     type : UPDATE_BOOK,
     payload : async () => {
@@ -45,21 +45,21 @@ export function updateBook(bookId, book){
         },
         body : JSON.stringify(book)
       })
-      let response  = await fetch(`${SERVER}/books`)
+      let response  = await await fetch(`${SERVER}/books?pageSize=${pageSize || ''}&pageNo=${pageNo || ''}&filterField=${filterField || ''}&filterValue=${filterValue || ''}&sortField=${sortField || ''}&sortOrder=${sortOrder || ''}`)
       let json = await response.json()
       return json
     }
   }
 }
 
-export function deleteBook(bookId){
+export function deleteBook(bookId, pageSize='', pageNo='', filterField='', filterValue='', sortField='', sortOrder=''){
   return {
     type : DELETE_BOOK,
     payload : async () => {
       await fetch(`${SERVER}/books/${bookId}`, {
         method : 'delete'
       })
-      let response  = await fetch(`${SERVER}/books`)
+      let response  = await await fetch(`${SERVER}/books?pageSize=${pageSize || ''}&pageNo=${pageNo || ''}&filterField=${filterField || ''}&filterValue=${filterValue || ''}&sortField=${sortField || ''}&sortOrder=${sortOrder || ''}`)
       let json = await response.json()
       return json
     }
